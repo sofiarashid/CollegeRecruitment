@@ -19,7 +19,7 @@ section,
     position: sticky;
     top: 0;
     z-index: 1030;
-    background-color: var(--nav-bg, var(--navy));
+    background-color: var(--navy);
     min-height: 120px;
     padding: 10px 20px;
 }
@@ -39,8 +39,8 @@ section,
 }
 
 .navbar-home .nav-link {
-    background-color: var(--nav-button-bg, var(--gold));
-    color: var(--nav-text, #111) !important;
+    background-color: var(--gold);
+    color: #111 !important;
     font-weight: 700;
     margin: 5px;
     padding: 12px 20px !important;
@@ -49,38 +49,13 @@ section,
 }
 
 .navbar-home .nav-link:hover {
-    background-color: var(--nav-button-hover, var(--gold));
+    background-color: var(--gold);
     transform: translateY(-2px);
-}
+} 
 
 .navbar-home .nav-link.active {
-    background-color: var(--nav-active-bg, var(--light-gold));
-    color: var(--nav-active-text, #111) !important;
-}
-
-/* Each section supplies a different navbar color theme. */
-.navbar-home.section-programs {
-    --nav-bg: var(--gold);
-    --nav-button-bg: var(--navy);
-    --nav-button-hover: #38568f;
-    --nav-text: #fff;
-    --nav-active-bg: var(--light-gold);
-}
-
-.navbar-home.section-student-life {
-    --nav-bg: #fff;
-    --nav-button-bg: var(--navy);
-    --nav-button-hover: #38568f;
-    --nav-text: #fff;
-    --nav-active-bg: var(--gold);
-}
-
-.navbar-home.section-cost-admissions {
-    --nav-bg: #D5D5D4;
-    --nav-button-bg: var(--navy);
-    --nav-button-hover: #38568f;
-    --nav-text: #fff;
-    --nav-active-bg: var(--gold);
+    background-color: var(--light-gold);
+    color: #111 !important;
 }
 
 .navbar-home .navbar-toggler {
