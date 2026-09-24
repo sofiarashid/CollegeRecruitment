@@ -1,10 +1,3 @@
-/* Shared colors keep the page palette consistent. */
-:root {
-    --navy: #293F6F;
-    --gold: #E3C362;
-    --light-gold: #E4D7AD;
-}
-
 /* ===== Page and navigation ===== */
 html {
     scroll-behavior: smooth;
@@ -19,7 +12,7 @@ section,
     position: sticky;
     top: 0;
     z-index: 1030;
-    background-color: var(--navy);
+    background-color: #293f6f;
     min-height: 120px;
     padding: 10px 20px;
 }
@@ -39,7 +32,7 @@ section,
 }
 
 .navbar-home .nav-link {
-    background-color: var(--gold);
+    background-color: #E3C362;
     color: #111 !important;
     font-weight: 700;
     margin: 5px;
@@ -49,12 +42,12 @@ section,
 }
 
 .navbar-home .nav-link:hover {
-    background-color: var(--gold);
+    background-color: #E3C362;
     transform: translateY(-2px);
 } 
 
 .navbar-home .nav-link.active {
-    background-color: var(--light-gold);
+    background-color: #E4D7AD;
     color: #111 !important;
 }
 
@@ -70,7 +63,7 @@ section,
 /* ===== Hero carousel ===== */
 .site-carousel {
     width: 100%;
-    height: 750px;
+    margin-bottom: 0;
     overflow: hidden;
     position: relative;
 }
@@ -83,8 +76,7 @@ section,
 .site-carousel-slide {
     display: block;
     flex: 0 0 100%;
-    height: 750px;
-    min-width: 100%;
+    height: 100vh;
     box-sizing: border-box;
 }
 
@@ -103,23 +95,14 @@ section,
     font-family: 'Aleo', serif;
 }
 
-/* Shared placeholder alignment keeps image blocks consistent. */
-.image-placeholder,
-.events-image-placeholder,
-.logo-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.about-section .tcnjshortlogo {
+    display: block;
+    width: min(100%, 420px);
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    object-fit: contain;
 }
-
-.image-placeholder {
-    min-height: 270px;
-    background-color: #e8c700;
-    border: 2px dashed #293F6F;
-    color: #293F6F;
-    font-size: 1.25rem;
-}
-
 .about-text-box {
     min-height: 270px;
     padding: 40px;
@@ -147,24 +130,13 @@ section,
     font-family: 'Aleo', serif;
 }
 
-.events-section .row {
-    align-items: stretch !important;
-    min-height: 420px;
-}
 
-.events-section .row > div {
-    display: flex;
-}
 
-.events-image-placeholder {
-    width: 100%;
-    height: 100%;
-    min-height: 0;
-    background-color: #e9edf5;
-    border: 2px dashed #293F6F;
-    color: #293F6F;
-    font-size: 1.25rem;
-}
+
+
+
+
+
 
 .events-content h2 {
     margin-bottom: 10px;
@@ -172,19 +144,6 @@ section,
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     font-weight: 700;
-}
-
-.events-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.events-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px 18px;
 }
 
 .event-item {
@@ -211,6 +170,7 @@ section,
     margin-bottom: 0;
     color: #293F6F;
     font-family: 'Aleo', serif;
+    font-size: inherit;
     line-height: 1.3;
 }
 
@@ -287,29 +247,36 @@ section,
     display: flex;
     align-items: center;
     background-color: #FFE100;
-    padding: 64px 24px;
+    padding: 72px 24px 88px;
+    min-height: 90vh;
 }
 
 .programs-section h2 {
-    margin-bottom: 36px;
+    margin-bottom: 70px;
     color: #293F6F;
     font-family: 'Playfair Display', serif;
-    font-size: 2.75rem;
+    font-size: clamp(2.5rem, 4vw, 4rem);
     font-weight: 700;
     text-align: center;
 }
 
+.programs-section .row {
+    margin-top: 0;
+    row-gap: 24px;
+}
+
 .program-box {
-    aspect-ratio: 8 / 3;
+    aspect-ratio: 5 / 3;
+    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
+    padding: 28px;
     border: 3px solid #293F6F;
     background-color: #fff;
     color: #293F6F;
     font-family: 'Aleo', serif;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 1.8vw, 2rem);
     font-weight: 700;
     text-align: center;
     text-decoration: none;
@@ -357,28 +324,11 @@ section,
     justify-content: flex-end;
     gap: 16px;
 }
-
-.social-placeholder {
-    width: 92px;
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    color: #fff;
-    font-family: 'Aleo', serif;
-    font-size: 0.8rem;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.social-placeholder:hover,
-.social-placeholder:focus-visible {
-    background-color: #fff;
-    color: #293F6F;
+.mascotimg {
+    height: fit-content;
+    width: 100%;
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 
 /* ===== Footer ===== */
@@ -389,125 +339,3 @@ section,
     padding: 64px 24px;
 }
 
-@media (max-width: 767px) {
-    .navbar-home {
-        min-height: auto;
-    }
-
-    .navbar-home .logo {
-        height: 70px;
-        margin-right: 0;
-    }
-
-    .navbar-home .navbar-toggler {
-        margin-left: auto;
-    }
-
-    .navbar-home .navbar-collapse {
-        flex-basis: 100%;
-    }
-
-    .navbar-home .navbar-nav {
-        align-items: flex-start !important;
-        padding-top: 10px;
-    }
-
-    .navbar-home .nav-link:first-of-type {
-        margin-left: 5px;
-    }
-
-    .site-carousel,
-    .site-carousel-slide {
-        height: 625px;
-    }
-
-    .about-section {
-        padding: 36px 16px;
-    }
-
-    .image-placeholder {
-        min-height: 195px;
-    }
-
-    .about-text-box {
-        min-height: 195px;
-        padding: 28px;
-    }
-
-    .events-section {
-        padding: 14px 16px;
-    }
-
-    .events-image-placeholder {
-        min-height: 200px;
-        height: auto;
-    }
-
-    .events-section .row {
-        min-height: 0;
-    }
-
-    .events-section .row > div {
-        display: block;
-    }
-
-    .events-content {
-        display: block;
-    }
-
-    .events-list {
-        grid-template-columns: 1fr;
-    }
-
-    .stats-section {
-        padding: 48px 16px;
-    }
-
-    .stats-grid {
-        row-gap: 36px;
-    }
-
-    .stat-placeholder {
-        min-height: 150px;
-    }
-
-    .stats-large-placeholder {
-        min-height: 140px;
-        font-size: 2.25rem;
-    }
-
-    .programs-section,
-    .programs-followup-placeholder {
-        min-height: 50vh;
-    }
-
-    .programs-section {
-        padding: 48px 16px;
-    }
-
-    .programs-section h2 {
-        margin-bottom: 28px;
-    }
-
-    .programs-followup-placeholder,
-    .footer {
-        padding: 48px 16px;
-    }
-
-    .programs-contact-row {
-        margin-top: 32px;
-    }
-
-    .social-links {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        gap: 6px;
-    }
-
-    .social-placeholder {
-        width: 52px;
-        flex: 0 0 52px;
-        padding: 4px;
-        font-size: 0.55rem;
-    }
-}
