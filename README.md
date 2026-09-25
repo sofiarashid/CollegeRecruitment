@@ -6,4 +6,6 @@ I used AI to help me problem solve parts of my website.
 
 2) I asked it to change the border to a dotted border because I did not like the lined border, and I kept it as AI gave me.
 
+3) I asked it to add comments to the css to divide the sections. I went back in and edited the comments because I didn't like them, and I organized everything by section.
+
 I looked over the final changes and edited everything to my liking with colors, sizing, and made it responsive.
